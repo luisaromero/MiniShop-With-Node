@@ -6,6 +6,9 @@ const app = express();
 
 app.use(express.json());
 
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+
 // Nueva forma de importar en express-handlebars 4.x+
 
 const products = [
@@ -85,10 +88,8 @@ app.get("/", (req, res) => {
     });
 });
 app.get("/about", (req, res) => {
-    res.render("home", {
-        titulo: "Padel Ciaga",
-        products: products
-
+    res.render("about", {
+        titulo: "Sobre Nosotros"
     });
 });
 app.get("/contact", (req, res) => {
@@ -99,8 +100,7 @@ app.get("/contact", (req, res) => {
     });
 });
 
-app.use('/static', express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+
 
 require('dotenv').config();
 
