@@ -32,6 +32,10 @@ app.set('views', path.join(__dirname, 'views'));
 // 4. DATOS (mock, en memoria)
 // ==========================================
 
+const name_brand = 'Padel Ciaga'
+
+const welcomeMsg = 'Bienvenida a nuestra tienda'
+
 const products = [
     {
         nombre: "Camiseta Básica",
@@ -101,8 +105,9 @@ const products = [
 app.route('/')
     .get((req, res) => {
         res.render("home", {
-            titulo: "Padel Ciaga",
-            products: products
+            titulo: name_brand,
+            products: products,
+            msg_welcome: welcomeMsg
         });
     })
     .all((req, res) => {
@@ -112,7 +117,6 @@ app.route('/')
 app.route('/about')
     .get((req, res) => {
         res.render("about", {
-            titulo: "Sobre Nosotros"
         });
     })
     .all((req, res) => {
