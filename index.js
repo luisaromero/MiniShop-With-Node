@@ -5,6 +5,7 @@ const { engine } = require('express-handlebars');
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
@@ -93,12 +94,21 @@ app.get("/about", (req, res) => {
     });
 });
 app.get("/contact", (req, res) => {
-    res.render("home", {
-        titulo: "Padel Ciaga",
-        products: products
-
+    res.render("contact", {
+        titulo: "Contáctanos"
     });
 });
+
+app.post("/contact", (req, res) => {
+    const { nombre, email, mensaje } = req.body;
+
+    console.log("Nuevo mensaje de contacto:", { nombre, email, mensaje });
+
+    res.render("success", {
+        nombre: nombre
+    });
+});
+
 
 
 
