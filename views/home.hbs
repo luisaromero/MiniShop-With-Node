@@ -1,2 +1,85 @@
-<h1>Hello World from Handlebars</h1>
-{{usuario}}
+<section class="hero-section">
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6">
+        <span class="section-label">
+          PADEL CIAGA
+        </span>
+
+        <h1 class="welcome-title">
+          Bienvenida a nuestra tienda
+        </h1>
+
+        <p class="hero-text">
+          Descubre ropa y accesorios diseñados para mujeres que buscan
+          rendimiento, comodidad y estilo dentro y fuera de la cancha.
+        </p>
+
+        <a href="#productos" class="btn btn-dark rounded-pill px-4">
+          Ver colección
+        </a>
+      </div>
+
+      <div class="col-lg-6">
+        <img
+          src="/img/side-view-woman-playing-paddle-tennis.jpg"
+          alt="Padel Ciaga"
+          class="hero-image"
+        />
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section id="productos" class="container py-5">
+
+  <div class="text-center mb-5">
+    <span class="section-label">
+      COLECCIÓN
+    </span>
+
+    <h2 class="section-title">
+      Nuestros Productos
+    </h2>
+  </div>
+
+  <div class="row g-4">
+
+    {{#each products}}
+      <div class="col-md-6 col-lg-4">
+
+        <div class="product-card">
+
+          <img src="{{imagen}}" alt="{{nombre}}" class="product-image" />
+
+          <div class="product-info">
+
+            <h3>{{nombre}}</h3>
+
+            <p class="price">
+              ${{precio}}
+            </p>
+
+            {{#if disponible}}
+              <span class="stock available">
+                En stock
+              </span>
+            {{else}}
+              <span class="stock unavailable">
+                Agotado
+              </span>
+            {{/if}}
+
+          </div>
+
+        </div>
+
+      </div>
+    {{/each}}
+
+  </div>
+
+</section>
