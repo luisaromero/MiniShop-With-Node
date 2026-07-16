@@ -4,7 +4,15 @@ body {
   font-family: "Inter", sans-serif;
   background: #fafafa;
   color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  flex: 1;
+}
+
 .top-bar {
   background: #111;
   color: white;
