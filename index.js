@@ -25,7 +25,20 @@ app.use(express.static('public'));
 // ==========================================
 app.engine('hbs', engine({
     defaultLayout: 'main',
-    extname: '.hbs'
+    extname: '.hbs',
+    helpers: {
+        upperCase: function (text) {
+            if (!text) return '';
+            return text.toUpperCase();
+        },
+        formatCLP: function (price) {
+            return new Intl.NumberFormat('es-CL', {
+                style: 'currency',
+                currency: 'CLP',
+                minimumFractionDigits: 0
+            }).format(price);
+        }
+    }
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
