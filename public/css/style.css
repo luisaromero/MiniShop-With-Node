@@ -5,6 +5,36 @@ body {
   background: #fafafa;
   color: #1a1a1a;
 }
+.top-bar {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: #111 !important;
+}
+
+.navbar-nav {
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #444 !important;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+}
 
 .section-label {
   font-size: 0.8rem;
@@ -52,4 +82,38 @@ body {
 .feature-card p {
   color: #666;
   margin-bottom: 0;
+}
+.footer {
+  background: #fafafa;
+  padding: 5rem 0 3rem;
+  text-align: center;
+  border-top: 1px solid #ececec;
+}
+
+.footer-logo {
+  letter-spacing: 5px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-text {
+  color: #777;
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #444;
+}
+
+.copyright {
+  color: #999;
+  font-size: 0.85rem;
 }
